@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revelo Auto Task</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        width: 280px;
+        background: #fff;
+        color: #1a1a2e;
+      }
+      .header {
+        background: linear-gradient(135deg, #6c3fd6, #9b5de5);
+        color: #fff;
+        padding: 14px 16px;
+      }
+      .header h1 {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      .header p {
+        font-size: 11px;
+        opacity: 0.85;
+        margin-top: 2px;
+      }
+      .body {
+        padding: 14px 16px;
+      }
+      .status-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+      .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #ccc;
+        flex-shrink: 0;
+      }
+      .dot.active {
+        background: #22c55e;
+        box-shadow: 0 0 6px #22c55e88;
+      }
+      .label {
+        font-size: 12px;
+        color: #444;
+      }
+      .targets {
+        background: #f5f0ff;
+        border-radius: 8px;
+        padding: 10px 12px;
+        margin-bottom: 12px;
+      }
+      .targets h2 {
+        font-size: 11px;
+        font-weight: 600;
+        color: #6c3fd6;
+        margin-bottom: 6px;
+      }
+      .targets li {
+        font-size: 11px;
+        color: #333;
+        list-style: disc inside;
+        line-height: 1.6;
+      }
+      .btn {
+        width: 100%;
+        padding: 8px;
+        background: #6c3fd6;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .btn:hover {
+        background: #5a32b8;
+      }
+      .btn.stop {
+        background: #dc2626;
+        margin-top: 6px;
+      }
+      .btn.stop:hover {
+        background: #b91c1c;
+      }
+      .btn.resume {
+        background: #16a34a;
+        margin-top: 6px;
+      }
+      .btn.resume:hover {
+        background: #15803d;
+      }
+      .last-run {
+        font-size: 10px;
+        color: #888;
+        text-align: center;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Revelo Auto Task Starter</h1>
+      <p>Checks every 10 minutes automatically</p>
+    </div>
+    <div class="body">
+      <div class="status-row">
+        <div class="dot active" id="statusDot"></div>
+        <span class="label" id="statusLabel">Monitoring active</span>
+      </div>
+      <div class="targets">
+        <h2>TARGET PROJECTS</h2>
+        <ul>
+          <li>Single HTML Interfaces</li>
+          <li>Single HTML Interfaces - Chocolate</li>
+        </ul>
+      </div>
+      <button class="btn" id="runNowBtn">Run Check Now</button>
+      <button class="btn stop" id="toggleBtn">Stop Monitoring</button>
+      <div class="last-run" id="lastRun"></div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
